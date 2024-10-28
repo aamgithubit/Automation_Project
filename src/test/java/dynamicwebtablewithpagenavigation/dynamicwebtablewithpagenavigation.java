@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import com.testcases.log4j;
 
 public class dynamicwebtablewithpagenavigation {
-
+WebDriver driver;
 	@BeforeTest
 	public void staticwebtable() throws InterruptedException
 	{
