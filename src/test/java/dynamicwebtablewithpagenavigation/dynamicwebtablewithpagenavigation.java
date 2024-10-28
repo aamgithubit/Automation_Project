@@ -16,8 +16,7 @@ import org.testng.annotations.Test;
 import com.testcases.log4j;
 
 public class dynamicwebtablewithpagenavigation {
-	static Logger demologger = LogManager.getLogger(log4j.class.getName());
-	WebDriver driver;
+
 	@BeforeTest
 	public void staticwebtable() throws InterruptedException
 	{
@@ -35,7 +34,6 @@ public class dynamicwebtablewithpagenavigation {
 		driver.get("https://demo.opencart.com/admin/index.php?route=sale&user_token=8eeeb73ab3db9705220e3cb3366c2549");
 		driver.findElement(By.xpath("//li[@id='menu-sale']/a[@href='#collapse-4']")).click();
 		driver.findElement(By.xpath("//*[@id='collapse-4']/li[1]/a")).click();
-		demologger.info("clicked on the orderpage");
 		String header=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover']/thead")).getText();
 		System.out.println(header);
 
@@ -46,11 +44,9 @@ public class dynamicwebtablewithpagenavigation {
 		//now we want to retrieve only total page number count from this text i.e.78  "Showing 1 to 10 of 778 (78 Pages)"
 		int noofpages=Integer.valueOf(totalpages.substring(totalpages.indexOf("(")+1, totalpages.indexOf("Pages")-1));
 		System.out.println(noofpages);
-		demologger.info("cached total no of pages");
 
 		driver.findElement(By.xpath("//a[text()='7']")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		demologger.info("moved to 7th page");
 		 //verifying customer
 		 String customer= "Le Duy Quan";
 	
