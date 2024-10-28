@@ -26,7 +26,7 @@ public class dynamicwebtablewithpagenavigation {
 		Thread.sleep(2000);
 		driver= new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		demologger.info("browser started");
+		
 	}
 
 	@Test
