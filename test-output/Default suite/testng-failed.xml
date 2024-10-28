@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="handling_frameswithoutusing_switchto.handlingframes_without_switchto">
+      <class name="dynamicwebtablewithpagenavigation.dynamicwebtablewithpagenavigation">
         <methods>
-          <include name="quitbrowser"/>
-          <include name="testframes"/>
-          <include name="setbrowser"/>
+          <include name="staticwebtable"/>
+          <include name="teardown"/>
+          <include name="table1"/>
         </methods>
-      </class> <!-- handling_frameswithoutusing_switchto.handlingframes_without_switchto -->
+      </class> <!-- dynamicwebtablewithpagenavigation.dynamicwebtablewithpagenavigation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

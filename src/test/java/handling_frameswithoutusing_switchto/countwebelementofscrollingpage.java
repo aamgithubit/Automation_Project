@@ -33,7 +33,7 @@ public class countwebelementofscrollingpage {
 		List<WebElement> allbook;
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 
-		//capyure all weblement in a list
+		//capture all weblement in a list
 		allbook= driver.findElements(By.xpath(""));
 		js.executeScript("window.scrollBy(0, document.body.scrollHeight)");
 		System.out.println(allbook.size());
