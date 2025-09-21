@@ -28,6 +28,7 @@ public class BaseClass1 {
 	public void setup() {
 		
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\msilocal\\Downloads\\chromedriver.exe");
+		String browser = System.getProperty("browsername", "chrome"); // default chrome
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		//rconfig.geturl("");

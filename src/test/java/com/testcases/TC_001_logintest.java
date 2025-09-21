@@ -8,6 +8,8 @@ public class TC_001_logintest extends BaseClass1 {
 
 	@Test(testName="1", priority=0)
 	public void login() {
+		String user = System.getProperty("username", "defaultUser");
+	    String pass = System.getProperty("password", "defaultPass");
 		
 		driver.get("https://www.amazon.in");
 		System.out.println("listing title is:-" + "  " + driver.getTitle());
