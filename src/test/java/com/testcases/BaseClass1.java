@@ -12,11 +12,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.annotations.*;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 public class BaseClass1 {
 	
 
 	static WebDriver driver;    
 	static String screenshotName;
+	public static ExtentReports extent;
+    public static ExtentTest test;
 
 	@BeforeTest
 	public void setup() {
@@ -65,8 +71,24 @@ public class BaseClass1 {
 			System.out.println("Successfully captured a screenshot");
 		} catch (IOException e) {
 			System.out.println("Exception while taking screenshot " + e.getMessage());
-		}
+		}}
+		
+		 @BeforeSuite
+		    public void startReport() {
+		        ExtentSparkReporter reporter = new ExtentSparkReporter("test-output/ExtentReport.html");
+		        reporter.config().setReportName("Automation Test Report");
+		        reporter.config().setDocumentTitle("Extent Report");
 
+		        extent = new ExtentReports();
+		        extent.attachReporter(reporter);
+		        extent.setSystemInfo("OS", System.getProperty("os.name"));
+		        extent.setSystemInfo("Tester", "Abhishek");
+		    }
+
+		    @AfterSuite
+		    public void endReport() {
+		        extent.flush();
+		    }
 			
 		//	if(formattedDate==null) {
 		//		LocalDateTime myDateObj = LocalDateTime.now();
@@ -74,5 +96,5 @@ public class BaseClass1 {
 		//	   formattedDate = myDateObj.format(myFormatObj);
 		//
 		//		}
-	}}
+	}
 

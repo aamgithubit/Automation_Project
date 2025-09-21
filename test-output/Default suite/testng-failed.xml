@@ -5,6 +5,8 @@
     <classes>
       <class name="com.testcases.amazon">
         <methods>
+          <include name="endReport"/>
+          <include name="startReport"/>
           <include name="setup"/>
           <include name="amazon"/>
           <include name="teardown"/>

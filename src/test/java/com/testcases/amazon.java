@@ -12,6 +12,9 @@ public class amazon extends BaseClass1 {
 
 	@Test
 	public void amazon() throws InterruptedException {
+		 test = BaseClass1.extent.createTest("Login Test");
+		    test.info("Starting login test");
+
 
 		//driver.manage().window().maximize();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
